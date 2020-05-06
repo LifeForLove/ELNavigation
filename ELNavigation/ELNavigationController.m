@@ -9,7 +9,7 @@
 #import "ELNavigationController.h"
 #import "UINavigationBar+ELExtension.h"
 #import "UIViewController+ELExtension.h"
-
+#import "ELBaseConfig.h"
 @interface ELNavigationController ()<UINavigationControllerDelegate>
 
 @property (nonatomic,strong) UIImageView * animateView;
@@ -120,6 +120,21 @@
         }];
     }
     [self.navigationBar setShadowImage:[self imageWithColor:viewController.el_navBottomLineColor ?: [UIColor clearColor] ]];
+    if (@available(iOS 11.0, *)) {
+        if (viewController.el_prefersLargeTitles) {
+            if (@available(iOS 13.0, *)) {
+                
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    self.navigationBar.el_navTransitionView.frame = CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), SafeAreaNavHeight);
 }
 
 /**

@@ -10,9 +10,10 @@
 软件架构说明
 
 #### 代码说明
-
-1. 在 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated 方法中，设置控制器的导航栏状态。
-2. 为返回手势添加事件，获取返回手势进度，增加过渡效果 [self.interactivePopGestureRecognizer addTarget:self action:@selector(interactivePopGes:)]; 
+1. 在导航栏加载完成后，在导航栏上添加一层自定义el_navTransitionView，通过设置这个自定义view的颜色或图片，来实现导航栏颜色的改变。
+2. 在 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated 方法中，设置控制器的导航栏状态。
+3. 为返回手势添加事件，获取返回手势进度，增加过渡效果，手势返回前添加一个层view覆盖，手势返回过程中，通过改变这个覆盖view的颜色，来达到渐变的效果，手势返回结束后，删除这个view。
+   [self.interactivePopGestureRecognizer addTarget:self action:@selector(interactivePopGes:)]; 
 
 #### 使用说明
 

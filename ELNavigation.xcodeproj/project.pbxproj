@@ -41,6 +41,7 @@
 		AC5E805C23ADE91A004B7582 /* ELNanStateConfigCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELNanStateConfigCell.h; sourceTree = "<group>"; };
 		AC5E805D23ADE91A004B7582 /* ELNanStateConfigCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELNanStateConfigCell.m; sourceTree = "<group>"; };
 		AC5E805E23ADE91A004B7582 /* ELNanStateConfigCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELNanStateConfigCell.xib; sourceTree = "<group>"; };
+		AC676437245993A300CCCC2A /* ELBaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELBaseConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 				401D5DB522F288BA00AC82AD /* LaunchScreen.storyboard */,
 				401D5DB822F288BA00AC82AD /* Info.plist */,
 				401D5DB922F288BA00AC82AD /* main.m */,
+				AC676437245993A300CCCC2A /* ELBaseConfig.h */,
 			);
 			path = ELNavigation;
 			sourceTree = "<group>";

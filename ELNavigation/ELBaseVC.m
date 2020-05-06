@@ -26,6 +26,8 @@
     self.el_interactivePopGestureEnable = YES;
     self.el_navBottomLineColor = nil;
     [self el_configNavigationStyle];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,7 +40,7 @@
     
     if (@available(iOS 11.0, *)) {
         if (self.el_prefersLargeTitles) {
-            self.navigationController.navigationBar.prefersLargeTitles = YES;
+//            self.navigationController.navigationBar.prefersLargeTitles = YES;
         }
     }
 }

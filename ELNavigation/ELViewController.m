@@ -16,6 +16,8 @@
 
 @property (nonatomic,strong) UIView *footView;
 
+@property (nonatomic,weak) UITableView *tableView;
+
 @end
 
 @implementation ELViewController
@@ -38,6 +40,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UITableView * tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView = tableView;
     tableView.delegate = self;
     tableView.dataSource = self;
     
@@ -251,6 +254,11 @@
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    self.tableView.frame = self.view.bounds;
 }
 
 - (ELNavConfigModel *)configModel {
